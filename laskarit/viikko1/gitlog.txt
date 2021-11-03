@@ -1,0 +1,21 @@
+$ git log --stat | cat
+commit 97fef43721646bce7b88e2093fb8e4aca4d6e6b8
+Author: juhani-dev <juhani.kontulainen@gmail.com>
+Date:   Wed Nov 3 15:01:29 2021 +0200
+
+    muutos
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 4811e836b9f7e3f05619c8663a349f4ec18a5dda
+Author: juhani-dev <juhani.kontulainen@gmail.com>
+Date:   Wed Nov 3 14:50:30 2021 +0200
+
+    tiedostot
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)

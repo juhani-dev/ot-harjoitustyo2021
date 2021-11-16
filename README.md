@@ -1,4 +1,6 @@
-# ohjelmistotekniikka
+# ohjelmistotekniikka Blackjack sovellus
+
+
 
 ## _viikko1 laskarit tehty_
 ### __tässä linkit__

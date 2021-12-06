@@ -1,9 +1,19 @@
 from typing import Text
 import pygame
 import random
+import start_screen
+import Decks
+
+import test
 class Blackjack():
     def __init__(self):
-        pygame.init()
+        self.player =[]
+        self.dealer =[]
+       
+        self.game_deck= Decks.Create_Deck()
+        self.aa =self.game_deck.get_deck()
+        print(self.aa)
+        
         self.screen = pygame.display.set_mode([1000, 600])
         self.button = pygame.Rect(500, 500, 50, 50)
         smallfont = pygame.font.SysFont('Corbel',35)
@@ -27,7 +37,13 @@ class Blackjack():
         pygame.display.flip()
     
     def running(self):
-        self.start() 
+     
+        self.game_start()
+        self.shows()
+        self.count_player()
+        self.count_dealer()
+        print(self.player,"player")
+        print(self.dealer,"dealer")
         while True:
             self.events()
             
@@ -37,9 +53,9 @@ class Blackjack():
             if action.type == pygame.QUIT:
                 exit()
             if action.type == pygame.MOUSEBUTTONDOWN:
-                mouse_pos = action.pos  # gets mouse position
+                mouse_pos = action.pos 
                 if self.button.collidepoint(mouse_pos):
-                    self.player_hit()
+                    self.player_hits()
                     print('button was pressed at {0}'.format(mouse_pos))
 
     
@@ -53,23 +69,10 @@ class Blackjack():
         random.shuffle(self.cards)
 
         return self.cards
-    def deal(self):
-        self.eka = self.cards.pop()
-        
-        self.top = eval(str(self.eka)[1:-1])
 
-        
-        
-
-    def show_card(self,x,y):
-        self.card_eka =self.deal()
-        self.card_eka =pygame.image.load(f"src/assets/cards_images/{self.top}")
-        
-        self.card_eka= pygame.transform.scale(self.card_eka, (100, 120))
-        self.screen.blit(self.card_eka, (x,y))
-        pygame.display.flip()
-
+    
     def start(self):
+        
         x = 0
         y = 100
         for i in range(3):
@@ -78,8 +81,80 @@ class Blackjack():
                 x =100
                 y =300
             self.show_card(x,y)
-        
+            
     def player_hit(self):
-        
         self.show_card(200,300)
-Blackjack()
+
+    def game_start(self):
+        for i in range(2):
+            j = self.aa.pop()
+            j=eval(str(j)[1:-1])
+            
+            self.dealer.append(j)
+            self.j =j
+            
+        
+        j = self.aa.pop()
+        j=eval(str(j)[1:-1])
+        
+        self.player.append(j)
+        self.j = j
+        
+        print(self.player,"polayer")
+        print(self.dealer,"dealer")
+
+    def shows(self):
+        x= 100 
+        dy = 100
+        py= 250
+        for i in self.dealer:
+            
+            card = str(i[0])+i[1]
+            x = x +100
+            i =pygame.image.load(f"assets/cards_images/{card}")
+            a= pygame.transform.scale(i, (100, 120))
+
+            self.screen.blit(a, (x,dy))
+        x=100
+
+        for i in self.player:
+            card = str(i[0])+i[1]
+            x=x+100
+            i =pygame.image.load(f"assets/cards_images/{card}")
+        
+            a= pygame.transform.scale(i, (100, 120))
+
+            self.screen.blit(a, (x,py))
+
+        pygame.display.flip()
+    
+    def player_hits(self):
+
+        j = self.aa.pop()
+        j=eval(str(j)[1:-1])
+        
+        self.player.append(j)
+
+        self.shows()
+    def dealer_hits(self):
+
+        j = self.aa.pop()
+        j=eval(str(j)[1:-1])
+        
+        self.dealer.append(j)
+
+        self.shows()
+    
+    def count_player(self):
+        count = 0
+        for i in self.player:
+            count=count+int(i[0])
+            
+        
+
+    def count_dealer(self):
+        count = 0
+        for i in self.dealer:
+            count=count+int(i[0])
+            
+        

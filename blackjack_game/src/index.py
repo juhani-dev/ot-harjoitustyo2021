@@ -1,160 +1,121 @@
-from typing import Text
-import pygame
-import random
-import start_screen
-import Decks
 
-import test
+import pygame
+import decks
+import check
+
+
 class Blackjack():
     def __init__(self):
-        self.player =[]
-        self.dealer =[]
-       
-        self.game_deck= Decks.Create_Deck()
-        self.aa =self.game_deck.get_deck()
-        print(self.aa)
-        
+        self.player = []
+        self.dealer = []
+        self.player_end = False
         self.screen = pygame.display.set_mode([1000, 600])
-        self.button = pygame.Rect(500, 500, 50, 50)
-        smallfont = pygame.font.SysFont('Corbel',35)
-        color=(255,255,255)  
-
-        self.text = smallfont.render('hit' , True , color)
-        pygame.display.set_caption("Blackjacks")
-
-        self.show_screen()
-        self.deck_of_cards()
-        
+        pygame.display.set_caption("Blackjack")
         self.running()
-    
 
-    
     def show_screen(self):
-        self.screen.fill((10,10,10))
-        pygame.draw.rect(self.screen, [255, 0, 0], self.button)
-        
-        self.screen.blit(self.text , (500,500))
+        self.screen.fill((10, 10, 10))
+        self.hit_button = pygame.Rect(500, 500, 70, 70)
+        self.stop_button = pygame.Rect(300, 500, 70, 70)
+        self.re_button = pygame.Rect(50, 500, 100, 70)
+        pygame.draw.rect(self.screen, [255, 0, 0], self.hit_button)
+        pygame.draw.rect(self.screen, [255, 0, 0], self.stop_button)
+        pygame.draw.rect(self.screen, [255, 0, 0], self.re_button)
+        smallfont = pygame.font.SysFont('Corbel', 35)
+        color = (255, 255, 255)
+        self.text_hit = smallfont.render('hit', True, color)
+        self.text_stop = smallfont.render('stop', True, color)
+        self.text_re = smallfont.render('restart', True, color)
+        self.screen.blit(self.text_hit, (500, 500))
+        self.screen.blit(self.text_stop, (300, 500))
+        self.screen.blit(self.text_re, (50, 500))
+
         pygame.display.flip()
-    
+
     def running(self):
-     
+        self.show_screen()
         self.game_start()
         self.shows()
-        self.count_player()
-        self.count_dealer()
-        print(self.player,"player")
-        print(self.dealer,"dealer")
         while True:
+
             self.events()
-            
-    
+
     def events(self):
+
         for action in pygame.event.get():
             if action.type == pygame.QUIT:
                 exit()
             if action.type == pygame.MOUSEBUTTONDOWN:
-                mouse_pos = action.pos 
-                if self.button.collidepoint(mouse_pos):
-                    self.player_hits()
-                    print('button was pressed at {0}'.format(mouse_pos))
+                mouse_pos = action.pos
+                if self.hit_button.collidepoint(mouse_pos):
+                    if check.Checks(self.player, self.dealer).count_player() < 22 and self.player_end is False:
 
-    
-    def deck_of_cards(self):
-        self.cards =[]
-        self.maat= ["PA","HE","RU","RI"]
-        for i in range(2,14):
-            for j in self.maat:
-                i = str(i)
-                self.cards.append([i+j+".png"])
-        random.shuffle(self.cards)
+                        self.player_hits()
 
-        return self.cards
+                if self.stop_button.collidepoint(mouse_pos):
+                    self.player_end = True
+                    if check.Checks(self.player, self.dealer).count_player() < 22:
+                        while check.Checks(self.player, self.dealer).count_dealer() < 16 and check.Checks(self.player, self.dealer).count_dealer() < 18:
 
-    
-    def start(self):
-        
-        x = 0
-        y = 100
-        for i in range(3):
-            x =  x+100
-            if i == 2:
-                x =100
-                y =300
-            self.show_card(x,y)
-            
-    def player_hit(self):
-        self.show_card(200,300)
+                            self.dealer_hits()
+
+                if self.re_button.collidepoint(mouse_pos):
+                    self.player_end = False
+                    self.show_screen()
+                    self.player = []
+                    self.dealer = []
+                    self.game_start()
+                    self.shows()
 
     def game_start(self):
-        for i in range(2):
-            j = self.aa.pop()
-            j=eval(str(j)[1:-1])
-            
-            self.dealer.append(j)
-            self.j =j
-            
-        
-        j = self.aa.pop()
-        j=eval(str(j)[1:-1])
-        
-        self.player.append(j)
-        self.j = j
-        
-        print(self.player,"polayer")
-        print(self.dealer,"dealer")
+        self.game_deck = decks.CreateDeck()
+
+        self.cards = self.game_deck.get_deck()
+        for i in range(1):
+            card = self.cards.pop()
+            card = eval(str(card)[1:-1])
+
+            self.dealer.append(card)
+            self.card = card
+
+        card = self.cards.pop()
+        card = eval(str(card)[1:-1])
+
+        self.player.append(card)
+        self.card = card
+
+        print(self.player, "polayer")
+        print(self.dealer, "dealer")
 
     def shows(self):
-        x= 100 
+        x = 100
         dy = 100
-        py= 250
+        py = 250
         for i in self.dealer:
-            
             card = str(i[0])+i[1]
-            x = x +100
-            i =pygame.image.load(f"assets/cards_images/{card}")
-            a= pygame.transform.scale(i, (100, 120))
-
-            self.screen.blit(a, (x,dy))
-        x=100
-
+            x = x + 100
+            i = pygame.image.load(f"assets/cards_images/{card}")
+            a = pygame.transform.scale(i, (100, 120))
+            self.screen.blit(a, (x, dy))
+        x = 100
         for i in self.player:
             card = str(i[0])+i[1]
-            x=x+100
-            i =pygame.image.load(f"assets/cards_images/{card}")
-        
-            a= pygame.transform.scale(i, (100, 120))
-
-            self.screen.blit(a, (x,py))
-
+            x = x+100
+            i = pygame.image.load(f"assets/cards_images/{card}")
+            a = pygame.transform.scale(i, (100, 120))
+            self.screen.blit(a, (x, py))
         pygame.display.flip()
-    
+
     def player_hits(self):
 
-        j = self.aa.pop()
-        j=eval(str(j)[1:-1])
-        
-        self.player.append(j)
-
+        card = self.cards.pop()
+        card = eval(str(card)[1:-1])
+        self.player.append(card)
         self.shows()
+
     def dealer_hits(self):
 
-        j = self.aa.pop()
-        j=eval(str(j)[1:-1])
-        
-        self.dealer.append(j)
-
+        card = self.cards.pop()
+        card = eval(str(card)[1:-1])
+        self.dealer.append(card)
         self.shows()
-    
-    def count_player(self):
-        count = 0
-        for i in self.player:
-            count=count+int(i[0])
-            
-        
-
-    def count_dealer(self):
-        count = 0
-        for i in self.dealer:
-            count=count+int(i[0])
-            
-        

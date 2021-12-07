@@ -1,7 +1,9 @@
-import pygame
+
+
 import start_screen
 
-class begin():
+
+class Begin():
 
     print(start_screen)
     start_screen.Start()

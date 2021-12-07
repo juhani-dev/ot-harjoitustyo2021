@@ -25,5 +25,6 @@ Sovelluksella voi pelata pygame:illa tehtyä blackjack peliä.  Tässä vaiheess
  koodin pylint tarkistukset suoritetetaan komennolla **poetry run invoke lint**
 
 ## Dokumentit
-
+[linkki sekvennsikaavioon](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/sekvenssikaavio.png)
 [linkki arkkitehtuuriin](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/arkkitehtuuri.md)
+[linkki työaikakirjanpitoon](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/työaikakirjanpito.md)

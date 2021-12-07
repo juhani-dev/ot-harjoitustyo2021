@@ -94,14 +94,14 @@ class Blackjack():
         for i in self.dealer:
             card = str(i[0])+i[1]
             x = x + 100
-            i = pygame.image.load(f"assets/cards_images/{card}")
+            i = pygame.image.load(f"src/assets/cards_images/{card}")
             a = pygame.transform.scale(i, (100, 120))
             self.screen.blit(a, (x, dy))
         x = 100
         for i in self.player:
             card = str(i[0])+i[1]
             x = x+100
-            i = pygame.image.load(f"assets/cards_images/{card}")
+            i = pygame.image.load(f"src/assets/cards_images/{card}")
             a = pygame.transform.scale(i, (100, 120))
             self.screen.blit(a, (x, py))
         pygame.display.flip()

@@ -1,7 +1,15 @@
 # ohjelmistotekniikka Blackjack sovellus
 
-Sovelluksella voi pelata pygame:illa tehtyä blackjack peliä.  Tässä vaiheessa vielä hyvin yksinkertaistettua versiota
+Sovelluksella voi pelata pygame:illa tehtyä blackjack peliä.  Tässä vaiheessa vielä hyvin yksinkertaistettua versiota.  Blackjackissa jaetaa ensin jakajalle ja pelaajalle yksi kortti. Pelaaja voi pyytää lisää kortteja tai antaa vuoron halutessaan jakajalle.  Jakaja jakaa itselleen kortteja kunnes summa on 16 tai enemmän, jos summa on 17 tai enemmän ei jakaja jaa enemäpä kortteja.
 
+Voittajan summa on 21 tai se kumpi on lähempänä 21:tä.
+
+## Ohjeet 
+Pelissä **hit** napilla voi pyytää lisää kortteja
+
+**stop** napilla pelaaja tytyy sen hetkiseen käteensä ja jakaja aloittaa oman vuoronsa
+
+**restart** napilla voi aloittaa uuden kierroksen
 
 
 ## Asennus

@@ -1,15 +1,21 @@
 ## Rakenne
 
-![kuva](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/kuvat/arkkiteht.png)
 
-#### Ohjelman tämän hetkinen "virheellinen" luokkakuvaus
 
-![kuva](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/kuvat/arkkiteht2.png)
+#### Ohjelman tämän hetkinen pakkaus arkitehtuuri
 
-#### käyttöliittymä eriytetään ui:hin , services taas vastaa sovelluslogiikasta ja data pitää sisällään kuvat mitä services käyttää.
+![kuva](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/kuvat/pakkaus.png)
+
+#### käyttöliittymä eriytetään ui:hin , services taas vastaa sovelluslogiikasta ja assets pitää sisällään kuvat mitä services käyttää.
 
 
 ### Käyttöliittymä koostuu
-	- aloitus näkymä
-	- itse peli näkymä
+	- näkymä mistä peli voidaan aloittaa start painikkeella
+	- itse peli näkymästä
+	Nämä ovat kahdessa eri luokassa (joista toinen vielä ui tiedoston ulkopuolella)
+
+
+### Esimerkki sovelluslogiikasta
+
+![kuva](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/sekvenssikaavio.png)
 

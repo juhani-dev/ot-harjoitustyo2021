@@ -1,7 +1,9 @@
 
 import pygame
-import services.decks as decks
+
+
 import services.check as check
+import services.decks as decks
 import services.scoreboard as scoreboard
 import services.check_winner as check_winner
 import services.win_count as win_count
@@ -81,7 +83,7 @@ class Blackjack():
                     self.winner_text = self.font.render(winner, True, self.white)
                     self.screen.blit(self.winner_text, (700, 250)) 
 
-                    self.score.win_count(winner)
+                    self.score.win_counter(winner)
                     self.score.win_count_draw()
                     pygame.display.flip()
 
@@ -126,7 +128,7 @@ class Blackjack():
             i = pygame.image.load(f"src/assets/cards_images/{card}")
             a = pygame.transform.scale(i, (100, 120))
             self.screen.blit(a, (x, py))
-        self.score.win_count("none")
+        self.score.win_counter("none")
         self.score.win_count_draw()
         scoreboard.Scoreboard(self.player,self.dealer,self.screen).scoreboard_dealer()
         scoreboard.Scoreboard(self.player,self.dealer,self.screen).scoreboard_player()

@@ -1,6 +1,6 @@
 
 
-import start_screen
+import start_screen as start_screen
 
 
 class Begin():

@@ -8,16 +8,16 @@ class Score():
 
 
         Args:
-            screen : pygame:issa luotu näyttö
+            screen : pygamilla luotu näyttö
         """
         self.player_count = 0
         self.dealer_count = 0
         self.screen = screen
         self.smallfont = pygame.font.SysFont('Corbel', 35)
         self.color = (255, 255, 255)
-    def win_count(self,winner):
+    def win_counter(self,winner):
         """ Lisää voitoista kirjaa pitäviin muuttujiin yhden rippuen voittajasta
-            Luo tekstin (self.result) missä näkee voittojen määrän
+            Luo tekstin (self.result) mistä näkee voittojen määrän
         Args:
             winner : check_winner tiedoston Winner luokan avulla luotu string mikä kertoo 
             pelatun käden voittajan

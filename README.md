@@ -6,7 +6,7 @@ Voittajan summa on 21 tai se kumpi on lähempänä 21:tä.
 
 ## Ohjeet 
 
-[linkki käyttöhjeisiin](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/käyttöohjeet.md)
+[linkki käyttöhjeisiin](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/käyttöohje.md)
 
 
 
@@ -38,4 +38,4 @@ Voittajan summa on 21 tai se kumpi on lähempänä 21:tä.
 
 [linkki työaikakirjanpitoon](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/työaikakirjanpito.md)
 
-[linkki käyttöhjeisiin](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/käyttöohjeet.md)
+[linkki käyttöhjeisiin](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/käyttöohje.md)

@@ -1,6 +1,9 @@
 import unittest
-from check import Checks
-from decks import CreateDeck
+import ui.index
+import pygame
+import services.win_count as win_count
+from services.check import Checks
+from services.decks import CreateDeck
 
 deck = [(8, "RU.png"), (9, "RU.png")]
 deck2 = [(10, "RU.png"), (7, "RU.png"), (2, "RU.png")]
@@ -29,3 +32,11 @@ class TestCheck(unittest.TestCase):
         hand = self.deck.count_dealer()
 
         self.assertEqual(hand, 19)
+
+class TestWinCount(unittest.TestCase):
+    def setUp(self):
+        self.player = "player wins"
+        self.count = win_count.Score(None).win_count(self.player)
+    def test_player_wins(self):
+        string = f"player wins: {1}  dealer wins: {0}"
+        self.assertEqual(self.count,string)

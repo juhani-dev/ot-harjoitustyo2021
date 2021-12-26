@@ -19,22 +19,19 @@ class Blackjack():
         self.dealer_end = False
         self.one_count = False
         self.screen = pygame.display.set_mode([1000, 600])
-
         self.game_screen = game_screen.Game_screen(self.screen)
         self.py_screen = self.game_screen.show_screen
         self.hit_button = pygame.Rect(500, 500, 70, 70)
         self.stop_button = pygame.Rect(300, 500, 70, 70)
         self.re_button = pygame.Rect(50, 500, 100, 70)
-        #self.screen = pygame.display.set_mode([1000, 600])
         self.white = (255, 255, 255)
         self.font = pygame.font.SysFont('Corbel', 35)
-        #pygame.display.set_caption("Blackjack")
+        pygame.display.set_caption("Blackjack")
         self.score = win_count.Score(self.screen)
         self.running()
     def running(self):
         """Peli silmukka
         """
-        #self.show_screen()
         self.game_screen.show_screen()
         self.start = deal_cards.Deal()
         self.cards =self.start.start_position()
@@ -87,7 +84,6 @@ class Blackjack():
                     self.dealer_end = False
                     self.one_count = False
                     self.game_screen.show_screen()
-                    #self.show_screen()
                     self.player = []
                     self.dealer = []
                     self.start = deal_cards.Deal()

@@ -20,7 +20,7 @@ class Blackjack():
         self.one_count = False
         self.screen = pygame.display.set_mode([1000, 600])
 
-        self.game_screen = game_screen.Game_screen(self.screen) 
+        self.game_screen = game_screen.Game_screen(self.screen)
         self.py_screen = self.game_screen.show_screen
         self.hit_button = pygame.Rect(500, 500, 70, 70)
         self.stop_button = pygame.Rect(300, 500, 70, 70)
@@ -31,22 +31,6 @@ class Blackjack():
         #pygame.display.set_caption("Blackjack")
         self.score = win_count.Score(self.screen)
         self.running()
-
-    #def show_screen(self):
-        """piirtää pygame ruudulle napit mitä käyttäjä voi painaa
-        """
-        self.screen.fill((10, 10, 10))
-        pygame.draw.rect(self.screen, [255, 0, 0], self.hit_button)
-        pygame.draw.rect(self.screen, [255, 0, 0], self.stop_button)
-        pygame.draw.rect(self.screen, [255, 0, 0], self.re_button)
-        text_hit = self.font.render('hit', True, self.white)
-        text_stop = self.font.render('stop', True, self.white)
-        text_re = self.font.render('restart', True, self.white)
-        self.screen.blit(text_hit, (500, 500))
-        self.screen.blit(text_stop, (300, 500))
-        self.screen.blit(text_re, (50, 500))
-        pygame.display.flip()
-
     def running(self):
         """Peli silmukka
         """

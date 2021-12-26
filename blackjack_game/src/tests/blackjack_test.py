@@ -1,4 +1,4 @@
-from typing import Counter
+
 import unittest
 from services.win_count import Score
 from services.check import Checks
@@ -19,7 +19,6 @@ class TestDeck(unittest.TestCase):
     def test_cards52(self):
 
         self.assertEqual(len(self.cards), 52)
-    
     def test_suits(self):
         counter = 0
         for i in self.cards:
@@ -121,5 +120,3 @@ class TestDealCards(unittest.TestCase):
         self.tester.dealer_hits()
         cards = self.tester.get_hands()
         self.assertEqual(len(cards[1]),4)
- 
-

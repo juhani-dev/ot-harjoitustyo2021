@@ -1,8 +1,4 @@
-
-
-import ui.start_screen as start_screen 
-
+from ui import start_screen
 
 class Begin():
-
     start_screen.Start()

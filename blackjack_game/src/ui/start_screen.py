@@ -1,6 +1,5 @@
 import pygame
 from ui import index
-import sys
 
 class Start():
     """luokka mikä luo aloitus ruudun mistä voi siirtyä itse peliin

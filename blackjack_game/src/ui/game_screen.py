@@ -31,3 +31,4 @@ class Game_screen():
         self.screen.blit(text_stop, (300, 500))
         self.screen.blit(text_re, (50, 500))
         pygame.display.flip()
+        

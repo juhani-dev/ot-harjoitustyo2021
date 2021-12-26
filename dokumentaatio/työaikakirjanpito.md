@@ -26,6 +26,21 @@ ___
 ---
 
 7.12                -5 h    --     sekvenssi kaavio ja README tiedoston parannuksia 
-___
 
-yhteensä             24 h
+---
+
+10.12                -4h   --      testien lisäsystä, arkkitehtuurikuvaus
+
+---
+
+14.12                 -4h  --       Docstring aloitus
+
+--
+
+25.12                 -4h --        Docstring loppuun, pylint korjauksia
+
+--
+
+26.12                 -4h  --       Dokumentaatiot viimeistelty
+
+yhteensä             40 h

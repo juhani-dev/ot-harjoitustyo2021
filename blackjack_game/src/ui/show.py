@@ -12,13 +12,13 @@ class Draw():
         """
         self.screen = screen
     def shows(self,player, dealer, score):
-        """Hakee pelaajan ja jakajan kortteja vastaavat kuvat tiedostosta ja piirtää ne 
+        """Hakee pelaajan ja jakajan kortteja vastaavat kuvat tiedostosta ja piirtää ne
         peli ikkunaan.
 
         Args:
             player : pelaajan kortit
             dealer : jakajan kortit
-            score  : voittojen määrä 
+            score  : voittojen määrä
         """
         self.player =player
         self.dealer = dealer

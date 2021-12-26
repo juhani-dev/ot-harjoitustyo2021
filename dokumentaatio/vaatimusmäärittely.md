@@ -4,12 +4,16 @@
 
 Sovelluksessa käyttäjä voi pelata Blackjack korttipeliä.  
 
-## Toiminnallisuudet perusversiossa
+## Toiminnallisuudet nykyisessä versiossa
 
--Käyttäjä voi pelata blackjack pelejä vaikka loputtomasti
+-Käyttäjä voi pelata blackjack pelejä vaikka loputtomasti tietokonetta vastaan
 -Sovellus pitää kirjaa kuinka monta peliä pelaaja on voittanut ja hävinnyt silloisessa sessiossa
 
-## Mahdolliset toiminnallisuus lisäykset 
+## Tominnallisuus
 
--Mahdollisuus luoda käyttäjätili mihin tallentuu tilastot pelatuista peleistä
--Mahdolisuus "panostaa" jokaiseen peliin ja pitää kirjaa kuinka paljon on voitolla tai tappiolla
+-Käyttäjä voi pelata Blackjack korttipeliä tietokonetta vastaan.  Voitettujen ja hävityjen pelien määrä on näkyvissä.
+
+## Jatkokehitys ideoita
+-Mahdollisuus luoda käyttäjätili mihin tallentuu tilastot kaikista pelatuista peleistä
+-Pelaajalle annettaan esimerkiksi 100 pistettä mitä hän voi panostaa ja pisteiden määrä tallennetaa tietokantaan
+

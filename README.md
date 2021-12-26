@@ -39,3 +39,7 @@ Voittajan summa on 21 tai se kumpi on lähempänä 21:tä.
 [linkki työaikakirjanpitoon](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/työaikakirjanpito.md)
 
 [linkki käyttöhjeisiin](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/käyttöohje.md)
+
+[linkki vaatimusmäärittelyyn](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/vaatimusmäärittely.md)
+
+[linkki testausdokumenttiin](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/testausdokumentti.md)

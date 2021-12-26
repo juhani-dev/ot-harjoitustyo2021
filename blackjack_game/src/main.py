@@ -1,6 +1,6 @@
 
 
-import start_screen as start_screen
+import ui.start_screen as start_screen 
 
 
 class Begin():

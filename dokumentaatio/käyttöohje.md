@@ -20,9 +20,9 @@ Kyseessä on Blackjack peli.  Pelin alkaessa jakajalla ja pelaajalla on yhdet ko
 
  **Hit** painiketta painamalla pelaaja pyytää itselleen lisää kortteja
 
- **stop** painikkeella pelaaja päättää, että ei halua enempää kortteja ja vuoro siirtyy jakajalle.
+ **stop** painikkeella pelaaja päättää, että ei halua enempää kortteja ja vuoro siirtyy jakajalle.  Jakaja nostaa kortteja Blackjack pelin sääntöjen mukaisen määrän. Stop nappulan painamisen jälkeen pelaaja ei voi pyytää enää itselleen lisää kortteja.
 
- **restart** painikkeella pelaaja voi aloittaa uuden kierroksen
+ **restart** painikkeella pelaaja voi aloittaa uuden kierroksen.  Nappulaa on painettava aina, kun haluaa aloittaa uuden kierroksen.  Nappulaa ei voi painaa ennen kuin on painanut **stop** nappulaa. 
 
  *dealer hand* kertoo jakajan korttien summan *player hand* pelaajan korttien summan
 

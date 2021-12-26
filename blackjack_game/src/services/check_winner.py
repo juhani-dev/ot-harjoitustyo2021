@@ -1,9 +1,5 @@
 
 
-
-
-
-
 class Winner():
     """Luokka millä tarkistetaan onko jaon voittaja pelaaja vai jakaja
     """
@@ -13,7 +9,6 @@ class Winner():
         Args:
             player : pelaajan korttien yhteen laskettu summa
             dealer :  jakajan korttien yhteen laskettu summa
-            
         """
         self.player = player
         self.dealer = dealer
@@ -45,6 +40,5 @@ class Winner():
                 self.winner = player_wins
             if self.player < self.dealer:
                 self.winner = dealer_wins
-        
         return self.winner
-
+        

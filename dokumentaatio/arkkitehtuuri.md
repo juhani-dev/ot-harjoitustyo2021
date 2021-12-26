@@ -1,21 +1,24 @@
 ## Rakenne
 
 
+### Ohjelman  pakkaus arkkitehtuuri
 
-#### Ohjelman tämän hetkinen pakkaus arkitehtuuri
+![kuva](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/kuvat/arc3.png)
 
-![kuva](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/kuvat/pakkaus.png)
-
-#### käyttöliittymä eriytetään ui:hin , services taas vastaa sovelluslogiikasta ja assets pitää sisällään kuvat mitä services käyttää.
-
-
-### Käyttöliittymä koostuu
-	- näkymä mistä peli voidaan aloittaa start painikkeella
-	- itse peli näkymästä
-	Nämä ovat kahdessa eri luokassa (joista toinen vielä ui tiedoston ulkopuolella)
+#### Ui pitää sisällään käyttölittymän.  Services sovelluslogiikasta vastaavat luokat.  Assets pitää sisällään kuvat mitä ohjelma käyttää.  Main on ohjelman aloittava luokka.
 
 
-### Esimerkki sovelluslogiikasta
+### Toiminnallisuuksia
 
-![kuva](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/sekvenssikaavio.png)
+ # Ohjelman toiminta loogiikkaa kuvattu sekvenssikaavioiden avulla.
+
+Kun käytttäjä on painanut start painiketta Deal luokka luo pakan Create_deck luokan avulla.  Luo aloitus tilanteen jakamalla pelaajalle ja jakajalle kortit. Ui:n Draw luokka hakee kortteja vastaavat kuvat assets tiedostoista ja piirää ne näkyviin käyttäjälle pygame ikkunaan.
+ 
+![kuva](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/kuvat/arc.png)
+
+käyttäjä painaessa *hit*  painiketta Checks luokka tarkistaa, että korttien summa on alle 22. Jos näin on Deal luokan player_hits metodi lisää pelaajalle yhden kortin lisää, get_hands metodi hakee kaikki pelaajan kortit. Tämän jälkeen Draw luokka hakee kortteja vastaavat kuvat ja piirtää ne pygame ikkunaan käyttäjän näkyville.
+
+![kuva](https://github.com/juhani-dev/ot-harjoitustyo2021/blob/master/dokumentaatio/kuvat/arc2.png)
+
+
 

@@ -17,7 +17,7 @@ class Checks():
         """Laskee listasta  pelaajan korttien summan
 
         Returns:
-            [type]: korttien summan
+            [type]: korttien arvojen summan
         """
         count = 0
         ace = False
@@ -25,7 +25,7 @@ class Checks():
             count = count+int(i[0])
             if int(i[0]) == 14:
                 ace =True
-        if ace == True and count > 21:
+        if ace is True and count > 21:
             count =count -13
         return count
 
@@ -33,7 +33,7 @@ class Checks():
         """Laskee listasta jakajan korttien summan
 
         Returns:
-            [type]: korttien summan
+            [type]: korttien arvojen summan
         """
         count = 0
         ace = False
@@ -41,6 +41,6 @@ class Checks():
             count = count+int(i[0])
             if int(i[0]) == 14:
                 ace =True
-        if ace == True and count > 21:
+        if ace is True and count > 21:
             count =count -13
         return count

@@ -1,6 +1,6 @@
 import pygame
-import ui.index
-
+from ui import index
+import sys
 
 class Start():
     """luokka mikä luo aloitus ruudun mistä voi siirtyä itse peliin
@@ -13,10 +13,9 @@ class Start():
         self.screen = pygame.display.set_mode([600, 600])
         pygame.display.set_caption("Start Screen")
         self.button = pygame.Rect(250, 250, 100, 100)
-        smallfont = pygame.font.SysFont('Corbel', 35)
+        self.smallfont = pygame.font.SysFont('Corbel', 35)
         color = (255, 255, 255)
-
-        self.text = smallfont.render('Start', True, color)
+        self.text = self.smallfont.render('Start', True, color)
         self.loop()
 
     def loop(self):
@@ -31,8 +30,7 @@ class Start():
         """
         self.screen.fill((0, 0, 0))
         pygame.draw.rect(self.screen, [255, 0, 0], self.button)
-        self.screen.blit(
-            self.text, (self.button.bottomleft, self.button.center))
+        self.screen.blit(self.text, (self.button.bottomleft, self.button.center))
         pygame.display.flip()
 
     def events(self):
@@ -45,4 +43,5 @@ class Start():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if self.button.collidepoint(mouse_pos):
-                    ui.index.Blackjack()
+                    index.Blackjack()
+            
